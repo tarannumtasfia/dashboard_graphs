@@ -1,0 +1,238 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--modal-overlay);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-panel {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 640px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow);
+  animation: slideUp 0.25s ease;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: clamp(0.95rem, 3vw, 1.1rem);
+  font-weight: 600;
+  line-height: 1.3;
+  min-width: 0;
+}
+
+.modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.modal-close:hover {
+  color: var(--text-primary);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.modal-toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.modal-btn {
+  font-size: 0.75rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.modal-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.modal-body {
+  padding: 0.875rem 1.25rem 1.25rem;
+  overflow: auto;
+  flex: 1;
+}
+
+.json-viewer {
+  background: var(--json-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.875rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  overflow: auto;
+  max-height: 50vh;
+  transition: max-height 0.3s ease;
+}
+
+.json-viewer.collapsed {
+  max-height: 0;
+  padding: 0 0.875rem;
+  border-color: transparent;
+  overflow: hidden;
+}
+
+.json-node {
+  user-select: text;
+}
+
+.node-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: none;
+  border: none;
+  color: var(--json-key);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0.1rem 0;
+  text-align: left;
+}
+
+.node-toggle:hover {
+  opacity: 0.8;
+}
+
+.toggle-icon {
+  display: inline-block;
+  width: 12px;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+}
+
+.json-children {
+  margin-left: 0.25rem;
+}
+
+.json-leaf {
+  padding: 0.1rem 0;
+  color: var(--text-primary);
+  word-break: break-word;
+}
+
+.json-key {
+  color: var(--json-key);
+}
+
+.json-string {
+  color: var(--json-string);
+}
+
+.json-number {
+  color: var(--json-number);
+}
+
+.json-null,
+.json-bool {
+  color: var(--text-muted);
+}
+
+.copy-toast {
+  font-size: 0.75rem;
+  color: var(--accent);
+  margin-left: auto;
+}
+
+/* ── Tablet+ ── */
+@media (min-width: 576px) {
+  .modal-overlay {
+    padding: 1.5rem;
+  }
+
+  .modal-header {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .modal-toolbar {
+    padding: 0.75rem 1.5rem;
+  }
+
+  .modal-body {
+    padding: 1rem 1.5rem 1.5rem;
+  }
+
+  .json-viewer {
+    font-size: 0.8rem;
+    padding: 1rem;
+  }
+
+  .modal-btn {
+    font-size: 0.8rem;
+  }
+}
+
+/* ── Mobile full-screen feel ── */
+@media (max-width: 575px) {
+  .modal-overlay {
+    padding: 0.5rem;
+    align-items: flex-end;
+  }
+
+  .modal-panel {
+    max-height: 92vh;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}

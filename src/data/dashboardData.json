@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "project": "Dashboard Graphs",
+    "updated": "2026-07-14",
+    "description": "Sample analytics data for portfolio dashboard"
+  },
+  "barChart": {
+    "title": "Revenue by Category",
+    "description": "Compare revenue across product categories",
+    "categories": ["Food", "Drinks", "Merch", "Tickets", "Venues"],
+    "revenue": [4200, 3100, 1800, 5600, 3900],
+    "users": [820, 640, 310, 1200, 780]
+  },
+  "lineChart": {
+    "title": "Sales Trend",
+    "description": "Monthly sales, traffic, and bookings over time",
+    "months": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    "sales": [120, 190, 150, 250, 220, 310],
+    "traffic": [80, 120, 100, 180, 160, 240],
+    "bookings": [45, 62, 55, 78, 70, 95]
+  },
+  "pieChart": {
+    "title": "Traffic Sources",
+    "description": "Percentage breakdown of visitor traffic sources",
+    "sources": [
+      { "name": "Direct", "value": 335 },
+      { "name": "Social", "value": 274 },
+      { "name": "Search", "value": 210 },
+      { "name": "Referral", "value": 148 },
+      { "name": "Email", "value": 98 }
+    ]
+  },
+  "donutChart": {
+    "title": "User Segments",
+    "description": "Distribution of user types across the platform",
+    "segments": [
+      { "name": "New Users", "value": 1048 },
+      { "name": "Returning", "value": 735 },
+      { "name": "VIP", "value": 580 },
+      { "name": "Enterprise", "value": 320 }
+    ]
+  },
+  "areaChart": {
+    "title": "Booking Volume",
+    "description": "Weekly booking volume with volume emphasis",
+    "weeks": ["W1", "W2", "W3", "W4", "W5", "W6", "W7", "W8"],
+    "bookings": [120, 180, 150, 220, 280, 260, 310, 350]
+  },
+  "stackedBarChart": {
+    "title": "Revenue by Status",
+    "description": "Monthly revenue split by payment status",
+    "months": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    "series": [
+      { "name": "Paid", "data": [3200, 4100, 3800, 5200, 4800, 6100] },
+      { "name": "Pending", "data": [800, 600, 900, 700, 1100, 900] },
+      { "name": "Refunded", "data": [200, 150, 300, 250, 400, 350] }
+    ]
+  },
+  "horizontalBarChart": {
+    "title": "Top Venues",
+    "description": "Venue rankings by visitor count",
+    "venues": ["Grand Arena", "Skyline Hall", "Harbor Pavilion", "Central Stadium", "Riverside Dome", "Metro Convention"],
+    "visitors": [12400, 10800, 9600, 8900, 7200, 6500]
+  },
+  "scatterChart": {
+    "title": "Price vs Bookings",
+    "description": "Relationship between ticket price and booking count per event",
+    "points": [
+      [25, 120], [35, 95], [45, 80], [55, 65], [65, 52],
+      [75, 48], [85, 40], [95, 35], [105, 28], [115, 22],
+      [40, 110], [60, 70], [80, 45], [100, 30]
+    ],
+    "xLabel": "Ticket Price ($)",
+    "yLabel": "Bookings"
+  },
+  "gaugeChart": {
+    "title": "Monthly Target",
+    "description": "KPI progress toward monthly revenue target",
+    "value": 78,
+    "max": 100,
+    "target": 100,
+    "unit": "%"
+  },
+  "heatmapChart": {
+    "title": "Activity Heatmap",
+    "description": "Temperature readings by day and hour (stored in Celsius)",
+    "unit": "celsius",
+    "days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    "hours": ["8am", "10am", "12pm", "2pm", "4pm", "6pm", "8pm", "10pm"],
+    "temperatureCelsius": [
+      [0, 0, 5], [0, 1, 8], [0, 2, 12], [0, 3, 15], [0, 4, 10], [0, 5, 18], [0, 6, 22], [0, 7, 14],
+      [1, 0, 7], [1, 1, 11], [1, 2, 16], [1, 3, 20], [1, 4, 14], [1, 5, 22], [1, 6, 25], [1, 7, 16],
+      [2, 0, 6], [2, 1, 10], [2, 2, 14], [2, 3, 18], [2, 4, 12], [2, 5, 20], [2, 6, 24], [2, 7, 15],
+      [3, 0, 8], [3, 1, 12], [3, 2, 17], [3, 3, 22], [3, 4, 16], [3, 5, 24], [3, 6, 28], [3, 7, 18],
+      [4, 0, 9], [4, 1, 14], [4, 2, 19], [4, 3, 24], [4, 4, 18], [4, 5, 26], [4, 6, 30], [4, 7, 20],
+      [5, 0, 12], [5, 1, 18], [5, 2, 24], [5, 3, 28], [5, 4, 22], [5, 5, 30], [5, 6, 35], [5, 7, 26],
+      [6, 0, 10], [6, 1, 15], [6, 2, 20], [6, 3, 24], [6, 4, 18], [6, 5, 26], [6, 6, 32], [6, 7, 22]
+    ]
+  }
+}
